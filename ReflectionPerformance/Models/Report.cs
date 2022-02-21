@@ -14,6 +14,7 @@ namespace ReflectionPerformance.Models
         public DateTime CreationDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public string? Email { get; set; }
+        public string? MissingProperty { get; set; }
         public bool IsDeleted { get; set; }
 
     }

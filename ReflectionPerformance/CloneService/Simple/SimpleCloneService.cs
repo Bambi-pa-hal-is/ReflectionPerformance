@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReflectionPerformance.CloneService
+namespace ReflectionPerformance.CloneService.Simple
 {
     public class SimpleCloneService : ICloneService
     {
-        public Report Clone(Report report)
+        public Report? Clone(Report report)
         {
+            if(report == null) return null;
+
             return new Report()
             {
                 Age = report.Age,

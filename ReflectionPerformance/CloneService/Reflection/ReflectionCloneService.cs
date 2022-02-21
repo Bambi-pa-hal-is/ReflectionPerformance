@@ -6,20 +6,22 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReflectionPerformance.CloneService
+namespace ReflectionPerformance.CloneService.Reflection
 {
     public class ReflectionCloneService : ICloneService
     {
-        public Report Clone(Report report)
+        public Report? Clone(Report report)
         {
             return Clone<Report>(report);
         }
 
-        public T Clone<T>(T clone)
+        public T? Clone<T>(T clone)
         {
+            if(clone == null) return default;
+
             var newClone = Activator.CreateInstance<T>();
             if (newClone == null) throw new ArgumentNullException("Generictype is null");
-            var fields = newClone.GetType().GetFields(BindingFlags.Public | BindingFlags.Instance);
+            var fields = newClone.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
             foreach (var field in fields)
             {
                 var value = field.GetValue(clone);

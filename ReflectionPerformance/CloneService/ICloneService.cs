@@ -9,8 +9,8 @@ namespace ReflectionPerformance.CloneService
 {
     public interface ICloneService
     {
-        public Report Clone(Report report);
-        public T Clone<T>(T clone);
+        public Report? Clone(Report report);
+        public T? Clone<T>(T clone);
         public void Map<T>();
     }
 }
