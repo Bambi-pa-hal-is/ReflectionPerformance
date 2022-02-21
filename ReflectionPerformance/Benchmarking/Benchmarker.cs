@@ -37,7 +37,6 @@ namespace ReflectionPerformance.Benchmarking
                 Method = method,
                 Time = Stopwatch.ElapsedMilliseconds
             });
-            //Console.WriteLine($"{method} - {Stopwatch.ElapsedMilliseconds}");
         }
 
         public void PrintResult()

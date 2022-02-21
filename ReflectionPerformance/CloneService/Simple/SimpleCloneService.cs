@@ -25,7 +25,6 @@ namespace ReflectionPerformance.CloneService.Simple
             };
         }
 
-
         public T Clone<T>(T clone)
         {
             throw new NotImplementedException();
